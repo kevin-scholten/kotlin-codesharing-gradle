@@ -6,5 +6,10 @@
 
 The template already present shows a Werknemer (Employee) name at the front-end. This name is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules.
 
+## Starting the applications
+1. Run 'gradle run' to start the back-end.
+2. Run 'gradle frontendBrowserDevelopmentRun' to start the front-end.
 
-Created by Kevin Scholten on March 2nd 2022.
+
+
+*Created by Kevin Scholten on March 2nd 2022.*
