@@ -8,7 +8,7 @@ import io.ktor.server.netty.Netty
 import io.ktor.response.*
 
 fun main() {
-    val werknemer = Werknemer(1, "Kevin Scholten", 21, listOf("kevinscholten7@gmail.com", "kevin.scholten@topicus.nl"), "Topicus Healthcare BV")
+    val werknemer = Werknemer(1, "John Doe", 21, listOf("john-doe@gmail.com", "john-doe@softwarecompanyltd.com"), "Software Company Ltd.")
     embeddedServer(Netty, port = 3000, host = "127.0.0.1") {
         routing {
             get("/api/werknemer") {
