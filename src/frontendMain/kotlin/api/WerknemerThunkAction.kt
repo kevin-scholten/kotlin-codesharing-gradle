@@ -9,6 +9,6 @@ import state.AppState
 
 fun getWerknemerFromBackend(dispatch: (SetWerknemerAction) -> AppState) {
     ScreenitBackend("/werknemer", "GET").then { result ->
-        dispatch(SetWerknemerAction(JSON.parse(result)))
+        dispatch(SetWerknemerAction(Json.decodeFromString(result)))
     }
 }

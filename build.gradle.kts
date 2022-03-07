@@ -25,7 +25,7 @@ kotlin {
         }
         withJava()
     }
-    js("frontend", LEGACY) {
+    js("frontend", IR) {
         binaries.executable()
         browser {
             commonWebpackConfig {
@@ -37,11 +37,13 @@ kotlin {
         }
     }
     sourceSets {
-        val serializationVersion = "0.13.0"
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+            }
+        }
         val commonTest by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
                 implementation(kotlin("test"))
             }
         }

@@ -1,3 +1,6 @@
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Werknemer(
     val id: Long?,
     val name: String?,

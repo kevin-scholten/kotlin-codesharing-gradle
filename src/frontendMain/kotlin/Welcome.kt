@@ -1,8 +1,8 @@
 import api.getWerknemerFromBackend
-import kotlinx.serialization.Serializable
 import react.*
-import react.dom.ReactHTML.h1
-import react.dom.ReactHTML.p
+import react.dom.b
+import react.dom.h1
+import react.dom.p
 import react.redux.useDispatch
 import react.redux.useSelector
 import redux.RAction
@@ -15,8 +15,25 @@ fun RBuilder.welcome() = child(functionComponent {
     useEffectOnce {
         getWerknemerFromBackend(dispatch)
     }
-    h1 { +"Werknemer informatie" }
-    p {+"Volledige naam: ${werknemer?.name}"}
-    p {+"Leeftijd: ${werknemer?.age}"}
-    p {+"Bedrijf: ${werknemer?.company}"}
+
+    h1 { +"Werknemer info" }
+    p {
+        b { +"Volledige naam: " }
+        +"${werknemer?.name}"
+    }
+    p {
+        b { +"Leeftijd: " }
+        +"${werknemer?.age}"
+    }
+    p {
+        b { +"Emails: " }
+    }
+    werknemer?.emails?.forEachIndexed { index, email ->
+        p {+"   ${index + 1}. $email"}
+    }
+    p {
+        b { +"Bedrijf: " }
+        +"${werknemer?.company}"
+    }
+
 })
