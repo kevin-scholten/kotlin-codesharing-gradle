@@ -3,8 +3,8 @@
 ## This application contains:
 - React Kotlin/JS Front-end module
 - SpringBoot Kotlin/JVM Back-end module
-- Shared Kotlin common source module
-|- `Werknemer` (employee)
+- Shared Kotlin common source module<br />
+|- `Werknemer` (employee)<br />
 |- Phone number validation logic.
 
 The template already present shows Werknemer (Employee) information at the front-end. This info is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules. This can be found in the `commonMain` module. The user can set the phone number of the employee only in the correct dutch phone number format. Phone number validation logic is also shared between back-end and front-end and checked on both modules.
