@@ -1,5 +1,5 @@
 package state
 
-import Werknemer
+import models.Werknemer
 
 data class WerknemerState(val werknemer: Werknemer)

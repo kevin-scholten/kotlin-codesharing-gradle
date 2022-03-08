@@ -1,7 +1,6 @@
 package state
 
-import Werknemer
-import legeWerknemer
+import models.legeWerknemer
 
 class AppState(val werknemer: WerknemerState = WerknemerState(legeWerknemer)) {
     companion object {

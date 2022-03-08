@@ -1,16 +1,29 @@
 package nl.kvns.backend
 
-import Werknemer
 import com.google.gson.Gson
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import models.Werknemer
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
+import validators.isTelefoonnummerValid
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/werknemer")
 class MyController {
-    @GetMapping("/werknemer")
+    val werknemer = Werknemer(1, "John Doe", 32, listOf("john.doe@gmail.com", "john.doe@softwarecompanybv.com"), "Software Company BV", "")
+
+    @GetMapping
     fun getWerknemer(): String {
-        return Gson().toJson(Werknemer(1, "John Doe", 32, listOf("john.doe@gmail.com", "john.doe@softwarecompanybv.com"), "Software Company BV"))
+        return Gson().toJson(werknemer)
+    }
+
+    @PutMapping("/telefoonnummer")
+    fun setTelefoonnummer(@RequestBody telefoonnummer: String): ResponseEntity<Any?> {
+        if(isTelefoonnummerValid(telefoonnummer)) {
+            werknemer.telefoonnummer = telefoonnummer
+            return ResponseEntity<Any?>(werknemer, HttpStatus.OK)
+        } else {
+            return ResponseEntity<Any?>("Phone number not valid.", HttpStatus.BAD_REQUEST)
+        }
     }
 }

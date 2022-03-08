@@ -1,6 +1,6 @@
 package actions
 
-import Werknemer
+import models.Werknemer
 import redux.RAction
 
 class SetWerknemerAction(val werknemer: Werknemer): RAction

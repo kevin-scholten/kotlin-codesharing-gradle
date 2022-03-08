@@ -66,6 +66,7 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:5.2.0-pre.240-kotlin-1.5.30")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-redux:4.1.0-pre.240-kotlin-1.5.30")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux:7.2.4-pre.240-kotlin-1.5.30")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.1-pre.240-kotlin-1.5.30")
                 implementation("org.reduxkotlin:redux-kotlin-thunk:0.5.3")
                 implementation("org.slf4j:slf4j-api:1.7.5")
                 implementation("org.slf4j:slf4j-log4j12:1.7.5")
