@@ -16,4 +16,4 @@ The template already present shows Werknemer (Employee) information at the front
 
 
 
-*Created by Kevin Scholten on March 2nd 2022.*
+*Created by Kevin Scholten on March 2nd 2022 as Proof of Concept.*
