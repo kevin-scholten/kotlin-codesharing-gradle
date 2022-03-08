@@ -39,7 +39,7 @@ fun RBuilder.welcome() = child(functionComponent {
         styledTr {
             styledTd { b { +"E-mails:" } }
         }
-        werknemer?.emails?.forEachIndexed { index, email ->
+        werknemer?.emails?.forEach { email ->
             styledTr {
                 styledTd { +email }
             }
