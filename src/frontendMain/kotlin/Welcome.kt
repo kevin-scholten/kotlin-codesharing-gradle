@@ -15,8 +15,7 @@ import react.redux.useDispatch
 import react.redux.useSelector
 import redux.RAction
 import state.AppState
-import styled.styledButton
-import styled.styledInput
+import styled.*
 import validators.isTelefoonnummerValid
 
 fun RBuilder.welcome() = child(functionComponent {
@@ -36,11 +35,15 @@ fun RBuilder.welcome() = child(functionComponent {
         b { +"Leeftijd: " }
         +"${werknemer?.age}"
     }
-    p {
-        b { +"Emails: " }
-    }
-    werknemer?.emails?.forEachIndexed { index, email ->
-        p {+"   ${index + 1}. $email"}
+    styledTable {
+        styledTr {
+            styledTd { b { +"E-mails:" } }
+        }
+        werknemer?.emails?.forEachIndexed { index, email ->
+            styledTr {
+                styledTd { +email }
+            }
+        }
     }
     p {
         b { +"Bedrijf: " }
@@ -49,13 +52,9 @@ fun RBuilder.welcome() = child(functionComponent {
     p {
         b { +"Telefoonnummer: " }
     }
-    if(!werknemer?.telefoonnummer.isNullOrBlank()) {
-        p { +werknemer?.telefoonnummer!! }
-    }
     styledInput {
         attrs {
             type = InputType.text
-            id = "inputTelefoon"
             defaultValue = werknemer?.telefoonnummer.orEmpty()
             onChangeFunction = {event->
                 tempTelefoonnummer = (event.target as HTMLInputElement).value
@@ -66,9 +65,9 @@ fun RBuilder.welcome() = child(functionComponent {
         attrs.onClickFunction = {
             if(isTelefoonnummerValid(tempTelefoonnummer)) {
                 setTelefoonnummer(dispatch, tempTelefoonnummer)
-                (document.getElementById("inputTelefoon") as HTMLInputElement).value = ""
+                window.alert("✅ Telefoonnummer veranderd naar '${tempTelefoonnummer}'")
             } else {
-                window.alert("Telefoonnummer niet valide!")
+                window.alert("❌ Telefoonnummer niet valide!")
             }
         }
         +"Zet telefoonnummer"
