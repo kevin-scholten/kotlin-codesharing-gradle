@@ -2,15 +2,18 @@
 
 ## This application contains:
 - React Kotlin/JS Front-end module
-- KTor Jetty KotlinJVM Back-end module
-- Shared KotlinJVM common source module
+- SpringBoot Kotlin/JVM Back-end module
+- Shared Kotlin common source module
 
 The template already present shows a Werknemer (Employee) name at the front-end. This name is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules.
 
 ## Starting the applications
-1. Run 'gradle run' to start the back-end.
+1. Start SpringBoot via the main function.
 2. Run 'gradle frontendBrowserDevelopmentRun' to start the front-end.
 3. go to `localhost:8080` for front-end, `localhost:3000/api/werknemer` for back-end calls.
+
+**_NOTE:_**  The back-end call is proxied from port 3000.
+
 
 
 *Created by Kevin Scholten on March 2nd 2022.*

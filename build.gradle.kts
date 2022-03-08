@@ -1,7 +1,9 @@
 plugins {
     kotlin("multiplatform") version "1.6.10"
-    application
+    id("org.springframework.boot") version "2.6.4"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("plugin.serialization") version "1.6.10"
+    kotlin("plugin.spring") version "1.6.10"
 }
 group = "nl.kvns"
 version = "1.0-SNAPSHOT"
@@ -49,9 +51,10 @@ kotlin {
         }
         val backendMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-server-netty:1.6.3")
-                implementation("io.ktor:ktor-html-builder:1.6.3")
-                implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
+                implementation("org.springframework.boot:spring-boot-starter-web")
+                implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+                implementation("org.jetbrains.kotlin:kotlin-reflect")
+                implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
                 implementation("com.google.code.gson:gson:2.7")
             }
         }
@@ -74,16 +77,7 @@ kotlin {
     }
 }
 
-application {
-    mainClass.set("ServerKt")
-}
-
 tasks.named<Copy>("backendProcessResources") {
     val frontendBrowserDistribution = tasks.named("frontendBrowserDistribution")
     from(frontendBrowserDistribution)
-}
-
-tasks.named<JavaExec>("run") {
-    dependsOn(tasks.named<Jar>("backendJar"))
-    classpath(tasks.named<Jar>("backendJar"))
 }
