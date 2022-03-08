@@ -5,7 +5,7 @@
 - SpringBoot Kotlin/JVM Back-end module
 - Shared Kotlin common source module
 
-The template already present shows a Werknemer (Employee) name at the front-end. This name is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules.
+The template already present shows Werknemer (Employee) information at the front-end. This info is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules. This can be found in the `commonMain` module.
 
 ## Starting the applications
 1. Start SpringBoot via the main function.
