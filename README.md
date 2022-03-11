@@ -1,7 +1,7 @@
 # Kotlin JS/JVM Code sharing Gradle multiplatform
 
 ## This application contains:
-* React Kotlin/JS Front-end module
+* React Kotlin/JS Front-end module (uses IR compiler)
 * SpringBoot Kotlin/JVM Back-end module
 * Shared Kotlin common source module<br />
   * `Werknemer` (employee)<br />
