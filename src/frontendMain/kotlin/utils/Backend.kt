@@ -9,7 +9,7 @@ import kotlin.js.json
 
 val BASE_URL = "/api"
 
-val ScreenitBackend = { url: String, method: String? ->
+val WerknemerSysteemBackend = { url: String, method: String? ->
     window.fetch(BASE_URL +url, object: RequestInit {
         override var method: String? = method.toString()
         override var credentials: RequestCredentials? = "same-origin".asDynamic()
@@ -18,7 +18,7 @@ val ScreenitBackend = { url: String, method: String? ->
         .then { it.text() }
 }
 
-val ScreenitBackendPost = { url: String, method: String?, body: String? ->
+val WerknemerSysteemBackendPost = { url: String, method: String?, body: String? ->
     window.fetch(BASE_URL +url, object: RequestInit {
         override var method: String? = method.toString()
         override var body: dynamic = body

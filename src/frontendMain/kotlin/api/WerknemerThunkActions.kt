@@ -1,20 +1,20 @@
 package api
 
-import utils.ScreenitBackend
+import utils.WerknemerSysteemBackend
 import actions.SetWerknemerAction
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import state.AppState
-import utils.ScreenitBackendPost
+import utils.WerknemerSysteemBackendPost
 
 fun getWerknemerFromBackend(dispatch: (SetWerknemerAction) -> AppState) {
-    ScreenitBackend("/werknemer", "GET").then { result ->
+    WerknemerSysteemBackend("/werknemer", "GET").then { result ->
         dispatch(SetWerknemerAction(Json.decodeFromString(result)))
     }
 }
 
 fun setTelefoonnummer(dispatch: (SetWerknemerAction) -> AppState, telefoonNummer: String) {
-    ScreenitBackendPost("/werknemer/telefoonnummer", "PUT", telefoonNummer).then { result ->
+    WerknemerSysteemBackendPost("/werknemer/telefoonnummer", "PUT", telefoonNummer).then { result ->
         dispatch(SetWerknemerAction(Json.decodeFromString(result)))
     }
 }
