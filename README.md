@@ -7,7 +7,7 @@
   * `Werknemer` (employee)<br />
   * `TelefoonnummerValidator` Phone number validation logic.
 
-The template already present shows Werknemer (Employee) information at the front-end. This info is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules. This can be found in the `commonMain` module. The user can set the phone number of the employee only in the correct dutch/international phone number format. Phone number validation logic is also shared between back-end and front-end and checked on both modules.
+The project is made with the IntelliJ KotlinJS Multiplatform initializer. The template already present shows Werknemer (Employee) information at the front-end. This info is received from the back-end by an API call. The `Werknemer` data class is shared between front-end and back-end modules. This can be found in the `commonMain` module. The user can set the phone number of the employee only in the correct dutch/international phone number format. Phone number validation logic is also shared between back-end and front-end and checked on both modules.
 
 ## Starting the applications
 1. Start SpringBoot via the main function.
