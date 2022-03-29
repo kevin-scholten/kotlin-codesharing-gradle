@@ -1,7 +1,4 @@
-# Kotlin JS/JVM Code sharing Gradle multiplatform
-
-
-## Nederlands (English below)
+# Kotlin JS/JVM Code delen Gradle multiplatform (English below)
 ### Deze applicatie bevat:
 * React Kotlin/JS Front-end module (gebruikt IR compiler)
 * SpringBoot Kotlin/JVM Back-end module
@@ -21,7 +18,7 @@ Het project is gemaakt met de IntelliJ KotlinJS Multiplatform initializer. De ap
 
 --------------------------
 
-## English
+# Kotlin JS/JVM Codesharing Gradle multiplatform
 ### This application contains:
 * React Kotlin/JS Front-end module (uses IR compiler)
 * SpringBoot Kotlin/JVM Back-end module
