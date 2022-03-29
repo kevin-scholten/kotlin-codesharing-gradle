@@ -1,5 +1,27 @@
 # Kotlin JS/JVM Code sharing Gradle multiplatform
 
+
+## Nederlands (English below)
+## Deze applicatie bevat:
+* React Kotlin/JS Front-end module (gebruikt IR compiler)
+* SpringBoot Kotlin/JVM Back-end module
+* Gedeelde Kotlin common bron module<br />
+  * `Werknemer`)<br />
+  * `TelefoonnummerValidator` Telefoonnummer validatielogica
+
+Het project is gemaakt met de IntelliJ KotlinJS Multiplatform initializer. De applicatie laat de gegevens van de `Werknemer` zien. De informatie wordt opgehaald van de back-end via een API-call. De `Werknemer` data klasse is gedeeld tussen de front-end en back-end modules. Deze bevinden zich in de `commonMain` module. De gebruiker kan het telefoonnummer van de werknemer invoeren via het Nederlandse of internationale telefoonnummerformat. Telefoonnummer validatielogica is ook gedeeld tussen front- en back-end en wordt gecheckt op beide modules.
+
+## De applicaties starten
+1. Start SpringBoot via de 'main' functie.
+2. Voer 'gradle frontendBrowserDevelopmentRun' uit om de front-end op te starten.
+3. Ga naar `localhost:8080` voor de front-end, `localhost:3000/api/werknemer` voor de back-end calls.
+
+**_NOTE:_**  De back-end call is geproxied van poort 3000 om CORS policy errors te voorkomen.
+
+
+--------------------------
+
+## English
 ## This application contains:
 * React Kotlin/JS Front-end module (uses IR compiler)
 * SpringBoot Kotlin/JVM Back-end module
