@@ -6,7 +6,7 @@
 * React Kotlin/JS Front-end module (gebruikt IR compiler)
 * SpringBoot Kotlin/JVM Back-end module
 * Gedeelde Kotlin common bron module<br />
-  * `Werknemer`)<br />
+  * `Werknemer`<br />
   * `TelefoonnummerValidator` Telefoonnummer validatielogica
 
 Het project is gemaakt met de IntelliJ KotlinJS Multiplatform initializer. De applicatie laat de gegevens van de `Werknemer` zien. De informatie wordt opgehaald van de back-end via een API-call. De `Werknemer` data klasse is gedeeld tussen de front-end en back-end modules. Deze bevinden zich in de `commonMain` module. De gebruiker kan het telefoonnummer van de werknemer invoeren via het Nederlandse of internationale telefoonnummerformat. Telefoonnummer validatielogica is ook gedeeld tussen front- en back-end en wordt gecheckt op beide modules.
